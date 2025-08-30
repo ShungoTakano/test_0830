@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>〇〇大学スキー企画 202X！</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', 'Inter', sans-serif;
+            background-color: #f0f9ff; /* light sky blue */
+            overflow-x: hidden;
+        }
+        .hero-bg {
+            background-image: url('https://placehold.co/1200x800/a0c4ff/ffffff?text=%E2%9D%84%EF%B8%8F'); /* Placeholder image, use a real one */
+            background-size: cover;
+            background-position: center;
+        }
+        .section-card {
+            background-color: white;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .step-number {
+            background-color: #38bdf8; /* sky-500 */
+            color: white;
+            border-radius: 9999px;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .btn-booth {
+            background-color: #fbbf24; /* amber-400 */
+            color: #4338ca; /* indigo-800 */
+            font-weight: bold;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            border: 2px solid #4338ca;
+        }
+        .snow-fall {
+            position: fixed;
+            top: -10%;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        .snowflake {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-10vh); }
+            100% { transform: translateY(110vh); }
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <!-- Snow effect container -->
+    <div class="snow-fall" id="snow-container"></div>
+
+    <!-- Header Section -->
+    <header class="hero-bg text-white">
+        <div class="bg-black bg-opacity-40 min-h-[60vh] flex flex-col items-center justify-center text-center p-8">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight shadow-lg">
+                <span class="text-sky-300">❄️</span> 〇〇大学スキー企画 202X！ <span class="text-sky-300">❄️</span>
+            </h1>
+            <p class="text-lg md:text-2xl max-w-3xl shadow-md">
+                一生モノの思い出を、最高の仲間たちと一緒に作らないか？<br>
+                初心者も経験者も大歓迎！必要なのは「楽しみたい！」って気持ちだけ！
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto p-4 md:p-8 max-w-4xl -mt-24">
+
+        <!-- Video Section -->
+        <section id="video" class="section-card">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-6 text-sky-600">まずはこの動画をチェック！</h2>
+            <p class="text-center mb-6">企画の魅力や去年の様子をギュッと詰め込んだスペシャルムービーです！</p>
+            <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
+                <!-- Replace this with your actual YouTube embed code -->
+                <iframe src="video.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Overview Section -->
+        <section id="overview" class="section-card">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-sky-600">企画の概要</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <tbody class="divide-y divide-slate-200">
+                        <tr class="hover:bg-sky-50">
+                            <th class="py-4 px-6 font-bold text-sky-700 w-1/3">日程</th>
+                            <td class="py-4 px-6">202X年 X月X日(X) 〜 X月X日(X) 【X泊X日】</td>
+                        </tr>
+                        <tr class="hover:bg-sky-50">
+                            <th class="py-4 px-6 font-bold text-sky-700">場所</th>
+                            <td class="py-4 px-6">〇〇スキー場（〇〇県）</td>
+                        </tr>
+                        <tr class="hover:bg-sky-50">
+                            <th class="py-4 px-6 font-bold text-sky-700">宿泊先</th>
+                            <td class="py-4 px-6">ホテル〇〇</td>
+                        </tr>
+                        <tr class="hover:bg-sky-50">
+                            <th class="py-4 px-6 font-bold text-sky-700">参加費</th>
+                            <td class="py-4 px-6">〇〇,〇〇〇円 <br><span class="text-sm text-slate-500">※宿泊費、リフト券代、往復バス代、保険料込み</span></td>
+                        </tr>
+                         <tr class="hover:bg-sky-50">
+                            <th class="py-4 px-6 font-bold text-sky-700">レンタル</th>
+                            <td class="py-4 px-6">スキー・スノボセット：〇〇円、ウェア：〇〇円 <br><span class="text-sm text-slate-500">※別途料金、現地払いです</span></td>
+                        </tr>
+                        <tr class="hover:bg-sky-50">
+                            <th class="py-4 px-6 font-bold text-sky-700">募集人数</th>
+                            <td class="py-4 px-6">〇〇名（先着順）</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Entry Method Section -->
+        <section id="entry" class="section-card">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-4 text-sky-600">エントリー方法</h2>
+            <div class="text-center bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 rounded-lg mb-8">
+                <p class="font-bold">オンラインでのエントリーはできません！</p>
+                <p>直接会って企画の楽しさを伝えたいから、まずは気軽にブースに遊びに来てください！</p>
+            </div>
+            
+            <div class="space-y-8">
+                <!-- Step 1 -->
+                <div class="flex items-start space-x-4">
+                    <div class="step-number">1</div>
+                    <div>
+                        <h3 class="font-bold text-lg">説明動画を見る</h3>
+                        <p class="text-slate-600">まずは上の動画を見て、企画の全体像を掴んでください。ワクワクしてきたかな？</p>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="flex items-start space-x-4">
+                    <div class="step-number">2</div>
+                    <div>
+                        <h3 class="font-bold text-lg">大学のブースに来る</h3>
+                        <p class="text-slate-600 mb-2">動画を見たら、下記の場所に設置している特設ブースに来てください！スタッフが笑顔で待ってます！</p>
+                        <div class="bg-sky-50 p-4 rounded-lg border border-sky-200">
+                            <p><strong>場所:</strong> 〇〇キャンパス 〇〇ホール前</p>
+                            <p><strong>期間:</strong> X月X日(X) 〜 X月X日(X)</p>
+                            <p><strong>時間:</strong> 12:00 〜 17:00</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="flex items-start space-x-4">
+                    <div class="step-number">3</div>
+                    <div>
+                        <h3 class="font-bold text-lg">ブースで詳しい説明を聞く</h3>
+                        <p class="text-slate-600">企画の詳細や持ち物、気になることなど、スタッフが何でもお答えします。不安なことはここで全部解消しよう！</p>
+                    </div>
+                </div>
+                <!-- Step 4 -->
+                <div class="flex items-start space-x-4">
+                    <div class="step-number">4</div>
+                    <div>
+                        <h3 class="font-bold text-lg flex items-center gap-2">仮エントリーする <span class="btn-booth">要ブース</span></h3>
+                        <p class="text-slate-600">「参加したい！」と思ったら、その場で申込用紙に記入して仮エントリー完了！<br><strong class="text-red-500">※この時点ではまだ参加は確定していません。</strong></p>
+                    </div>
+                </div>
+                <!-- Step 5 -->
+                <div class="flex items-start space-x-4">
+                    <div class="step-number">5</div>
+                    <div>
+                        <h3 class="font-bold text-lg">お金を払う</h3>
+                        <p class="text-slate-600">仮エントリー後、指定の期日までに参加費を指定の口座に振り込んでください。詳しい振込方法は仮エントリー時にお渡しする紙に書いてあります。</p>
+                    </div>
+                </div>
+                <!-- Step 6 -->
+                <div class="flex items-start space-x-4">
+                    <div class="step-number">6</div>
+                    <div>
+                        <h3 class="font-bold text-lg flex items-center gap-2">本エントリーする <span class="btn-booth">要ブース</span></h3>
+                        <p class="text-slate-600">参加費の支払いが完了したら、<strong class="text-red-500">支払い明細を持って、もう一度ブースに来てください。</strong>スタッフが支払いを確認したら、本エントリー完了です！</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Q&A Section -->
+        <section id="qa" class="section-card">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-sky-600">よくある質問 (Q&A)</h2>
+            <div class="space-y-4">
+                <details class="group bg-slate-50 p-4 rounded-lg cursor-pointer">
+                    <summary class="font-bold flex justify-between items-center">
+                        スキーやスノボが全くの初めてでも大丈夫？
+                        <span class="transform transition-transform duration-300 group-open:rotate-180">▼</span>
+                    </summary>
+                    <p class="mt-4 text-slate-600">もちろんんです！参加者の半数以上が初心者です。希望者には班分けをして、経験者が優しく教えるので安心して参加してください！</p>
+                </details>
+                <details class="group bg-slate-50 p-4 rounded-lg cursor-pointer">
+                    <summary class="font-bold flex justify-between items-center">
+                        ひとりで参加しても大丈夫？
+                        <span class="transform transition-transform duration-300 group-open:rotate-180">▼</span>
+                    </summary>
+                    <p class="mt-4 text-slate-600">大歓迎です！一人参加の仲間はたくさんいます。現地でのイベントや部屋割りなどを通じて、すぐにみんなと仲良くなれますよ！</p>
+                </details>
+                <details class="group bg-slate-50 p-4 rounded-lg cursor-pointer">
+                    <summary class="font-bold flex justify-between items-center">
+                        持ち物は何が必要？
+                        <span class="transform transition-transform duration-300 group-open:rotate-180">▼</span>
+                    </summary>
+                    <p class="mt-4 text-slate-600">詳しい持ち物リストは、本エントリー完了後にお渡しします。レンタルも充実しているので、最低限の準備で大丈夫です！</p>
+                </details>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-white text-center p-8">
+        <h3 class="text-xl font-bold mb-4">お問い合わせ</h3>
+        <div class="text-slate-300 space-y-2">
+            <p><strong>企画代表:</strong> 〇〇 〇〇 (〇〇学部)</p>
+            <p><strong>Email:</strong> xxxxx@xxxx.ac.jp</p>
+            <div>
+                <a href="#" class="hover:text-sky-400 mx-2">X (旧Twitter)</a> |
+                <a href="#" class="hover:text-sky-400 mx-2">Instagram</a>
+            </div>
+        </div>
+        <div class="mt-8 border-t border-slate-700 pt-6 text-sm text-slate-400">
+            <p>主催：〇〇大学 〇〇サークル / 〇〇実行委員会</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple snow effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const snowContainer = document.getElementById('snow-container');
+            const numberOfSnowflakes = 50;
+            for (let i = 0; i < numberOfSnowflakes; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.className = 'snowflake';
+                snowflake.style.left = `${Math.random() * 100}vw`;
+                snowflake.style.animationDuration = `${Math.random() * 5 + 5}s`; // 5 to 10 seconds
+                snowflake.style.animationDelay = `${Math.random() * 5}s`;
+                const size = Math.random() * 4 + 2;
+                snowflake.style.width = `${size}px`;
+                snowflake.style.height = `${size}px`;
+                snowflake.style.opacity = Math.random() * 0.5 + 0.3;
+                snowContainer.appendChild(snowflake);
+            }
+        });
+    </script>
+</body>
+</html>
